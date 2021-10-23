@@ -1,4 +1,5 @@
 ﻿using Auction.Business.Repositories.Interfaces;
+using Auction.DAL.ApplicationDBContext;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -15,18 +16,18 @@ namespace Auction.Business.Repositories
         private string _errorMessage = string.Empty;
         private bool _isDisposed;
 
-        public GenericRepository(IUnitOfWork<EmployeeDBContext> unitOfWork)
+        public GenericRepository(IUnitOfWork<ApplicationDBContext> unitOfWork)
             : this(unitOfWork.Context)
         {
         }
 
-        public GenericRepository(EmployeeDBContext context)
+        public GenericRepository(ApplicationDBContext context)
         {
             _isDisposed = false;
             Context = context;
         }
 
-        public EmployeeDBContext Context { get; set; }
+        public ApplicationDBContext Context { get; set; }
 
         public virtual IQueryable<T> Table
         {
@@ -64,7 +65,7 @@ namespace Auction.Business.Repositories
                 Entities.Add(entity);
 
                 if (Context == null || _isDisposed)
-                    Context = new EmployeeDBContext();
+                    Context = new ApplicationDBContext();
 
                 //Context.SaveChanges(); commented out call to SaveChanges as Context save changes will be 
                 //called with Unit of work
@@ -113,7 +114,7 @@ namespace Auction.Business.Repositories
                     throw new ArgumentNullException("entity");
 
                 if (Context == null || _isDisposed)
-                    Context = new EmployeeDBContext();
+                    Context = new ApplicationDBContext();
 
                 SetEntryModified(entity);
                 //Context.SaveChanges(); commented out call to SaveChanges as Context save changes will be called with Unit of work
@@ -136,7 +137,7 @@ namespace Auction.Business.Repositories
                     throw new ArgumentNullException("entity");
 
                 if (Context == null || _isDisposed)
-                    Context = new EmployeeDBContext();
+                    Context = new ApplicationDBContext();
 
                 Entities.Remove(entity);
                 //Context.SaveChanges(); commented out call to SaveChanges as Context save changes will be called with Unit of work

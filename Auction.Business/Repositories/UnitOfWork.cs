@@ -88,4 +88,3 @@ namespace Auction.Business.Repositories
     }
 
 }
-}
