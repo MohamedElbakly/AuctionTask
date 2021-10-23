@@ -21,5 +21,7 @@ namespace Auction.DAL.ApplicationDBContext
         public DbSet<Auction.DAL.Entities.Auction> Auctions { get; set; }
         public DbSet<AuctionBid> AuctionBids { get; set; }
         public DbSet<Bidder> Bidders { get; set; }
+
+        public System.Data.Entity.DbSet<Auction.DAL.Entities.AuctionItem> AuctionItems { get; set; }
     }
 }
