@@ -80,15 +80,12 @@ namespace AuctionWebApp.Controllers
                 {
                     repository.Insert(bidder);
                     unitOfWork.Save();
-                    //Do Some Other Task with the Database
-                    //If everything is working then commit the transaction else rollback the transaction
                     unitOfWork.Commit();
                     return RedirectToAction("Index");
                 }
             }
             catch (Exception ex)
             {
-                //Log the exception and rollback the transaction
                 unitOfWork.Rollback();
             }
             return View();
