@@ -62,7 +62,7 @@ namespace AuctionWebApp.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,Name")] Bidder bidder)
+        public ActionResult Create(Bidder bidder)
         {
             //if (ModelState.IsValid)
             //{
@@ -112,7 +112,7 @@ namespace AuctionWebApp.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,Name")] Bidder bidder)
+        public ActionResult Edit( Bidder bidder)
         {
             //if (ModelState.IsValid)
             //{

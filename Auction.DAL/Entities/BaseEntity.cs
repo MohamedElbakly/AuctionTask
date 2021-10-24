@@ -7,9 +7,11 @@ using System.Threading.Tasks;
 
 namespace Auction.DAL.Entities
 {
-    public class Bidder: BaseEntity
+    public class BaseEntity
     {
-        public string NameEn { get; set; }
-        public string NameAr { get; set; }
+        [Key]
+        public int ID { get; set; }
+
+        public DateTime CreatedOn { get; set; }
     }
 }

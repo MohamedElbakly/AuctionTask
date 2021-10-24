@@ -8,20 +8,17 @@ using System.Threading.Tasks;
 
 namespace Auction.DAL.Entities
 {
-    public class Auction
+    public class Auction: BaseEntity
     {
         public Auction()
         {
             this.AuctionBids = new HashSet<AuctionBid>();
         }
-        [Key]
-        public int ID { get; set; }
 
         [ForeignKey("AuctionItem")]
         public Nullable<int> AuctionItemId { get; set; }
         public virtual AuctionItem AuctionItem { get; set; }
 
-        public decimal StartPrice { get; set; }
 
         public virtual ICollection<AuctionBid> AuctionBids { get; set; }
     }

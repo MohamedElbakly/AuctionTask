@@ -8,11 +8,14 @@ using System.Threading.Tasks;
 
 namespace Auction.DAL.Entities
 {
-    public class AuctionBid
+    public class AuctionBid: BaseEntity
     {
-        [Key]
-        public int ID { get; set; }
+        public AuctionBid()
+        {
+            this.Profit = this.Auction.AuctionItem.StartPrice - this.Bid;
+        }
         public decimal Bid { get; set; }
+        public decimal Profit { get; set; }
 
         [ForeignKey("Auction")]
         public Nullable<int> AuctionId { get; set; }

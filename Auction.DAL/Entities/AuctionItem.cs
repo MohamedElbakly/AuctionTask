@@ -7,10 +7,9 @@ using System.Threading.Tasks;
 
 namespace Auction.DAL.Entities
 {
-    public class AuctionItem
+    public class AuctionItem : BaseEntity
     {
-        [Key]
-        public int ID { get; set; }
         public string Name { get; set; }
+        public decimal StartPrice { get; set; }
     }
 }
