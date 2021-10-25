@@ -126,7 +126,9 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AuctionBidsController.cs" />
     <Compile Include="Controllers\AuctionItemsController.cs" />
+    <Compile Include="Controllers\AuctionsController.cs" />
     <Compile Include="Controllers\BiddersController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
@@ -180,6 +182,16 @@
     <Content Include="Views\Bidders\Details.cshtml" />
     <Content Include="Views\Bidders\Edit.cshtml" />
     <Content Include="Views\Bidders\Index.cshtml" />
+    <Content Include="Views\Auctions\Create.cshtml" />
+    <Content Include="Views\Auctions\Delete.cshtml" />
+    <Content Include="Views\Auctions\Details.cshtml" />
+    <Content Include="Views\Auctions\Edit.cshtml" />
+    <Content Include="Views\Auctions\Index.cshtml" />
+    <Content Include="Views\AuctionBids\Create.cshtml" />
+    <Content Include="Views\AuctionBids\Delete.cshtml" />
+    <Content Include="Views\AuctionBids\Details.cshtml" />
+    <Content Include="Views\AuctionBids\Edit.cshtml" />
+    <Content Include="Views\AuctionBids\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

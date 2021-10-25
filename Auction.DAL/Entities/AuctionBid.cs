@@ -12,7 +12,7 @@ namespace Auction.DAL.Entities
     {
         public AuctionBid()
         {
-            this.Profit = this.Auction.AuctionItem.StartPrice - this.Bid;
+            //this.Profit = this.Auction.AuctionItem.StartPrice - this.Bid;
         }
         public decimal Bid { get; set; }
         public decimal Profit { get; set; }
